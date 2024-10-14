@@ -1,0 +1,32 @@
+.page_loading {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%,-50%) translateZ(0);
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    background: url('./../../public/images/Animation - 1727584601570.gif') center no-repeat;
+    background-size: contain;
+	animation: spinning 1.5s infinite ease-in-out;
+}
+
+@keyframes spinning {
+	0% { transform: translate(-50%,-50%) scale(1) translateZ(0);}
+	50% { transform: translate(-50%,-50%) scale(1.1) translateZ(0);}
+	100% { transform: translate(-50%,-50%) scale(1) translateZ(0);}
+}
+
+@keyframes lds-eclipse {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -12,7 +12,7 @@ export default {
          current: 'currentColor',
         'white': '#FFFFFF',
         'gray': '#F5F6F8',            
-        'gray-dark': '#A4A4A4',
+        'dark-gray': '#353754',
         'black': '#232834',
         'blue': '#1A326A',
         'dark-blue': '#030529',
