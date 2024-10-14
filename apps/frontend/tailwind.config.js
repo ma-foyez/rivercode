@@ -2,10 +2,23 @@
 export default {
   content: [
     "./index.html",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'transparent': 'transparent',
+         current: 'currentColor',
+        'white': '#FFFFFF',
+        'gray': '#F5F6F8',            
+        'gray-dark': '#A4A4A4',
+        'black': '#232834',
+        'blue': '#1A326A',
+        'dark-blue': '#030529',
+        'sky': "#4EC0F9"
+      }, 
+    },
   },
   plugins: [],
 }
