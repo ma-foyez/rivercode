@@ -1,17 +1,11 @@
 import React from 'react';
+import Hero from '../components/features/hero';
 
 const HomePage = () => {
     return (
         <div>
-            <h2>Home Page</h2>
-            <h2>Home Page</h2>
-            <h2>Home Page</h2>
-            <h2>Home Page</h2>
-            <h2>Home Page</h2>
-            <h2>Home Page</h2>
-            <h2>Home Page</h2>
-            <h2>Home Page</h2>
-            <h2>Home Page</h2>
+           <Hero/> <br />
+           <Hero/>
         </div>
     );
 };
