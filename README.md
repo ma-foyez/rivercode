@@ -16,8 +16,12 @@ Open your terminal and run the following commands to clone the project:
 
 ```bash
 git https://github.com/ma-foyez/rivercode.git
+```
+
+```bash
 cd rivercode
 ```
+
 
 ### Step 2: Install Dependencies
 
