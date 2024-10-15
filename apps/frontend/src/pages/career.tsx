@@ -4,6 +4,7 @@ import ContactUs from '../components/features/contactUs';
 import OurTeam from '../components/features/ourTeam';
 import WhyWorkWithUs from '../components/features/whyWorkWithUs';
 import EmployeeBenefits from '../components/features/employeeBenefits';
+import JobAd from '../components/features/jobAd';
 
 const CareerPage = () => {
     return (
@@ -16,6 +17,7 @@ const CareerPage = () => {
         <OurTeam/>
         <WhyWorkWithUs/>
         <EmployeeBenefits/>
+        <JobAd/>
         <ContactUs/>
      </div>
     );
