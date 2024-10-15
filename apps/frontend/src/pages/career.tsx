@@ -2,6 +2,7 @@ import React from 'react';
 import PageBanner from '../components/features/pageBanner';
 import ContactUs from '../components/features/contactUs';
 import OurTeam from '../components/features/ourTeam';
+import WhyWorkWithUs from '../components/features/whyWorkWithUs';
 
 const CareerPage = () => {
     return (
@@ -12,6 +13,7 @@ const CareerPage = () => {
         subTitle='Careers'
         />
         <OurTeam/>
+        <WhyWorkWithUs/>
         <ContactUs/>
      </div>
     );
