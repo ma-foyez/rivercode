@@ -1,40 +1,40 @@
 import React from 'react';
-import { DollarSign, GraduationCap, Clock, Network, Users, BookOpen } from 'lucide-react';
+import SectionTitle from '../sectionTitle';
 
 interface Benefit {
-  icon: React.ReactNode;
+  icon: string;
   title: string;
   description: string;
 }
 
 const benefits: Benefit[] = [
   {
-    icon: <DollarSign className="w-8 h-8 text-white" />,
+    icon: './assets/images/icons/Group (1).svg',
     title: "Competitive compensation",
     description: "Designed and developed SD Pro, centralizing critical flight information for more data-driven decisions."
   },
   {
-    icon: <GraduationCap className="w-8 h-8 text-white" />,
+    icon: './assets/images/icons/oppertunity.svg',
     title: "Opportunities for professional growth and development",
     description: "Designed and developed SD Pro, centralizing critical flight information for more data-driven decisions."
   },
   {
-    icon: <Clock className="w-8 h-8 text-white" />,
+    icon: './assets/images/icons/Group (2).svg',
     title: "Flexible work arrangements",
     description: "Designed and developed SD Pro, centralizing critical flight information for more data-driven decisions. (remote options available)"
   },
   {
-    icon: <Network className="w-8 h-8 text-white" />,
+    icon: './assets/images/icons/Group (3).svg',
     title: "Access to cutting-edge tools and technologies",
     description: "Designed and developed SD Pro, centralizing critical flight information for more data-driven decisions."
   },
   {
-    icon: <Users className="w-8 h-8 text-white" />,
+    icon: './assets/images/icons/Group (4).svg',
     title: "A supportive and inclusive work environment",
     description: "Designed and developed SD Pro, centralizing critical flight information for more data-driven decisions."
   },
   {
-    icon: <BookOpen className="w-8 h-8 text-white" />,
+    icon: './assets/images/icons/Group.svg',
     title: "Professional Development",
     description: "Gain access to a wide range of tools and resources for your professional growth."
   }
@@ -42,14 +42,29 @@ const benefits: Benefit[] = [
 
 const EmployeeBenefits: React.FC = () => {
   return (
-    <div className="bg-blue-900 p-8 text-white">
-      <h2 className="text-3xl font-bold mb-8 text-center">What We Offer</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="bg-blue p-8 text-white">
+      <SectionTitle title='What We Offer'/>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-5">
         {benefits.map((benefit, index) => (
-          <div key={index} className="bg-blue-800 p-6 rounded-lg">
+          <div 
+            key={index} 
+            className={`group rounded-lg p-4 sl-animate hover:bg-white hover:text-black ${index === 1 ? 'bg-white text-black' : ''}`}
+          >
+            <div className="relative h-10 w-10 my-2">
+              <img 
+                src={benefit.icon} 
+                alt={benefit.title} 
+                className="h-full w-full object-contain transition-opacity duration-300 group-hover:opacity-0"
+              />
+              <img 
+                src={benefit.icon} 
+                alt={benefit.title} 
+                className="absolute inset-0 h-full w-full object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100 filter invert"
+              />
+            </div>
+
             <div className="flex items-center mb-4">
-              {benefit.icon}
-              <h3 className="text-xl font-semibold ml-3">{benefit.title}</h3>
+              <h3 className="text-xl font-semibold">{benefit.title}</h3>
             </div>
             <p className="text-sm">{benefit.description}</p>
           </div>

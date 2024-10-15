@@ -3,6 +3,7 @@ import PageBanner from '../components/features/pageBanner';
 import ContactUs from '../components/features/contactUs';
 import OurTeam from '../components/features/ourTeam';
 import WhyWorkWithUs from '../components/features/whyWorkWithUs';
+import EmployeeBenefits from '../components/features/employeeBenefits';
 
 const CareerPage = () => {
     return (
@@ -14,6 +15,7 @@ const CareerPage = () => {
         />
         <OurTeam/>
         <WhyWorkWithUs/>
+        <EmployeeBenefits/>
         <ContactUs/>
      </div>
     );
