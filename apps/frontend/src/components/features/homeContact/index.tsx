@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Input from "../../elements/input";
 import Button from "../../elements/button";
 
-const Contact: React.FC = () => {
+const HomeContact: React.FC = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -134,4 +134,4 @@ const Contact: React.FC = () => {
   );
 };
 
-export default Contact;
+export default HomeContact;

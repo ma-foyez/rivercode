@@ -1,4 +1,4 @@
-import Contact from '../components/features/contact';
+import HomeContact from '../components/features/homeContact';
 import GlobalReach from '../components/features/globalReach';
 import Hero from '../components/features/hero';
 import Project from '../components/features/project';
@@ -13,7 +13,7 @@ const HomePage = () => {
            <Project/>
            <GlobalReach/>
            <Testimonial/>
-           <Contact/>
+           <HomeContact/>
         </div>
     );
 };
