@@ -1,14 +1,14 @@
-import { createClient } from 'next-sanity'
-import createImageUrlBuilder from "@sanity/image-url"
+import { createClient } from '@sanity/client'
+import imageUrlBuilder from '@sanity/image-url'
 
-export const config = {
-    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
-    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-    token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN!,
-    useCdn: process.env.NODE_ENV === "production",
+const config = {
+  dataset: import.meta.env.VITE_SANITY_DATASET || 'production',
+  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
+  useCdn: import.meta.env.MODE === 'production',
+  apiVersion: '2023-05-03',
 }
 
-export const sanityClient = createClient(config);
+export const sanityClient = createClient(config)
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const urlFor = (source: any) => createImageUrlBuilder(config).image(source);
+export const imageBuilder = imageUrlBuilder(sanityClient)
+export const urlFor = (source: any) => imageBuilder.image(source)

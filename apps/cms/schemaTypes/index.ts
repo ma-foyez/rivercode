@@ -1,5 +1,6 @@
-import heroSliders from './heroVideoSlider';
-
+import trustedCompany from './trustedCompany';
+import siteSettings from './settings';
 export const schemaTypes = [
-    heroSliders,
+    trustedCompany,
+    siteSettings
 ]

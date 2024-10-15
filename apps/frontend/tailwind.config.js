@@ -14,6 +14,7 @@ export default {
         'gray': '#F5F6F8',            
         'dark-gray': '#353754',
         'black': '#232834',
+        'text-black': '#232834',
         'blue': '#1A326A',
         'dark-blue': '#030529',
         'sky': "#4EC0F9"
