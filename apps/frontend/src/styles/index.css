@@ -144,3 +144,13 @@
 .swiper-button-next{
   right: 0;
 }
+
+.swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+  height: var(--swiper-scrollbar-size, 2px);
+}
+
+.swiper-scrollbar-drag {
+  height: 4px;
+  background: var(--swiper-scrollbar-drag-bg-color, #4EC0F9);
+  top: -50%;
+}
