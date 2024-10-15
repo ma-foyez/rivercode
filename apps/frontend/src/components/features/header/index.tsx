@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink , useLocation } from 'react-router-dom';
 import { navData } from '../../../utils/data/nav_data';
 import logo from '../../../assets/images/logo.svg';
 
 const Header = () => {
+    const location = useLocation();  
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [isToggle, setIsToggle] = useState(false);
     const [collapseNavbar, setCollapseNavbar] = useState(false);
@@ -30,9 +31,10 @@ const Header = () => {
             setMenuID(id);
         }
     };
+    const isHomePage = location.pathname === '/';
 
     return (
-        <header className={`relative lg:absolute header-section ${isToggle ? 'sticky' : ''} ${isHoverMenu ? 'bg-white' : 'lg:bg-transparent'}`}>
+        <header className={`relative lg:absolute header-section ${isToggle ? 'sticky' : ''} ${isHoverMenu || !isHomePage ? 'bg-white' : 'lg:bg-transparent'}`}>
             <div className="sl-container">
                 <div className="header-area">
                     <div className="header-logo">
