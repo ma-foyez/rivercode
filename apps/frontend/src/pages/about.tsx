@@ -2,6 +2,7 @@ import React from 'react';
 import PageBanner from '../components/features/pageBanner';
 import TrustedCompany from '../components/features/trustedCompany';
 import ContactUs from '../components/features/contactUs';
+import CompanyContent from '../components/features/companyContent';
 
 const AboutPage = () => {
     return (
@@ -12,6 +13,7 @@ const AboutPage = () => {
            subTitle='About Us'
            />
            <TrustedCompany/>
+           <CompanyContent/>
            <ContactUs/>
         </div>
     );
