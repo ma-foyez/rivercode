@@ -44,8 +44,8 @@ const ContactUs: React.FC = () => {
 
 
   return (
-    <section id="contact" className="sl-section-space relative">
-      <div className="absolute inset-0 bg-center z-0 transform scale-x-[-1]" style={{backgroundImage: "url('./assets/images/global-reach.png')"}}>
+    <section id="contact" className="sl-section-space relative mb-10">
+      <div className="absolute inset-0 xl:bg-cover bg-center z-0 transform scale-x-[-1]" style={{backgroundImage: "url('./assets/images/global-reach.png')"}}>
          <div className="absolute inset-0 bg-blue opacity-90"></div>
       </div>
 

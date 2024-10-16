@@ -43,8 +43,8 @@ const WhyWorkWithUs: React.FC = () => {
 
             </div>
 
-            <div className='relative h-screen order-1 lg:order-2'>
-                <img src="./assets/images/Mask group.png" alt="Rivercode" className='w-full h-screen' />
+            <div className='relative h-screen xl:h-auto order-1 lg:order-2'>
+                <img src="./assets/images/Mask group.png" alt="Rivercode" className='w-full h-screen xl:h-[550px]' />
                  <img src="./assets/images/icons/Elements_Blue-Angle-Bottom-Left 2.png" alt="Rivercode" className='absolute bottom-0 right-0 transform scale-x-[-1]' />
             </div>
         </div>

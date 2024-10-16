@@ -10,7 +10,7 @@ const PageBanner: React.FC<IPageBannerProps> = ({title, content, subTitle}) => {
   return (
     <section 
       className="h-screen lg:py-7 relative" >
-        <div className="absolute inset-0 bg-center z-0" style={{backgroundImage: `url(./assets/images/global-reach.png)`}}>
+        <div className="absolute inset-0 xl:bg-cover bg-center z-0" style={{backgroundImage: `url(./assets/images/global-reach.png)`}}>
          <div className="absolute inset-0 bg-blue opacity-60"></div>
       </div>
     <div className="sl-container min-h-screen grid grid-cols-1 md:grid-cols-2 items-center relative z-50">

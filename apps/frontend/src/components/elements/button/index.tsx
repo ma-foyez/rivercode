@@ -28,7 +28,7 @@ const Button = ({
 }: IButton) => {
     const enabledStyle = `border ${
         variant === "default"
-            ? "bg-sky text-white border-sky hover:border-dark-gray hover:text-sky hover:text-blue hover:bg-transparent"
+            ? "bg-sky text-white border-sky hover:border-dark-gray hover:text-black hover:bg-white"
             : "bg-gray text-blue border-dark-gray hover:border-sky hover:bg-sky hover:text-white"
     }`;
     const disabledStyle = "bg-sky/50 text-white border-sky cursor-not-allowed";
