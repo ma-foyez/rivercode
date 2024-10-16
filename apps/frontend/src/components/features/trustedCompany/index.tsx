@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import SectionTitle from '../sectionTitle';
 import { fetchTrustedCompany } from '../../../utils/cms/fetchTrustedCompany';
 import { ICompany } from '../../../utils/interface';
 import { urlForThumbnail } from '../../../utils/cms/_helper/imageProcess';
+import LoadingSkeleton from '../loadingSkeleton';
 
 const TrustedCompany: React.FC = () => {
 
@@ -26,11 +26,15 @@ const TrustedCompany: React.FC = () => {
     useEffect(()=>{
         fetchData()
     }, [])
+    
 
     return (
         <div className='sl-container py-5 lg:py-8'>
            <h1 className={`text-base md:text-lg xl:text-2xl text-[#7B7F85] text-center py-2 md:py-4 font-bold`}> We are trusted by companies like </h1>
-            <div className="grid grid-cols-2 xm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 items-center py-5">
+           {isLoading && <LoadingSkeleton count={4} /> }
+           {
+            !isLoading && (
+              <div className="grid grid-cols-2 xm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 items-center py-5">
               {
                data && data.length > 0 && data.map((company:ICompany, index: number) => (
                   <div key={index} className='p-4 text-center'>
@@ -39,6 +43,9 @@ const TrustedCompany: React.FC = () => {
                 ))
               }
             </div>
+            )
+           }
+            
         </div>
     );
 };
