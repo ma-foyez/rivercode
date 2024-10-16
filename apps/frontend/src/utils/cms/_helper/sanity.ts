@@ -2,9 +2,10 @@ import { createClient } from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
 
 const config = {
-  dataset: import.meta.env.VITE_SANITY_DATASET || 'production',
-  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
-  useCdn: import.meta.env.MODE === 'production',
+  dataset: process.env.VITE_SANITY_DATASET || 'production',
+  projectId: process.env.VITE_SANITY_PROJECT_ID,
+  token: process.env.SANITY_API_TOKEN,
+  useCdn: process.env.MODE === 'production',
   apiVersion: '2023-05-03',
 }
 

@@ -1,14 +1,9 @@
-import { groq } from "next-sanity";
+import groq from 'groq'; 
 import { sanityClient } from "./_helper/sanity";
 
-const query = groq`*[_type == "siteSettings"] | order(_createdAt)`;
+const query = groq`*[_type == "trustedCompany"]`;
 
 export const fetchTrustedCompany = async () => {
-  try {
-    const getData = await sanityClient.fetch(query);
-    return getData;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return null;
-  }
+  const cmsVideoSlider = await sanityClient.fetch(query);
+  return cmsVideoSlider;
 };
