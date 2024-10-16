@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Input from "../../elements/input";
 import Button from "../../elements/button";
+import { sendMessageByEmail } from "../../../utils/mailServicece/contact";
 
 const HomeContact: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     fullName: "",
     email: "",
     phone: "",
     company: "",
     message: "",
-  });
+  };
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState(initialFormData);
+  const [isFormValid, setIsFormValid] = useState(false);
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -21,11 +23,24 @@ const HomeContact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    const isValid = Object.values(formData).every(
+      (value) => value.trim() !== ""
+    );
+    setIsFormValid(isValid);
+  }, [formData]);
+
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
-    // Handle form submission logic here
-  };
+    setIsLoading(true);
+
+    const success = await sendMessageByEmail(formData);
+    if (success) {
+        setFormData(initialFormData);
+    }
+    setIsLoading(false);
+ };
 
   return (
     <section id="contact" className="sl-section-space">
@@ -123,9 +138,10 @@ const HomeContact: React.FC = () => {
           />
 
           <Button
-            title="Submit"
+            title={isLoading ? 'Submitting...' : 'Submit'} 
             type="submit"
             iconPosition="right"
+            disabled={!isFormValid || isLoading}
             icon={<i className="fa-solid fa-chevron-right text-xs"></i>}
           />
         </form>

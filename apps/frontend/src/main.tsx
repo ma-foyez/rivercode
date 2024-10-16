@@ -6,9 +6,12 @@ import 'swiper/css/navigation';
 import './styles/loader.css';
 import './styles/header.css';
 import './styles/index.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
+    <ToastContainer />
   </StrictMode>,
 )
