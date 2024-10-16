@@ -1,4 +1,3 @@
-import React from 'react';
 import PageBanner from '../components/features/pageBanner';
 import TrustedCompany from '../components/features/trustedCompany';
 import ContactUs from '../components/features/contactUs';

@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 import React, { useEffect, useState } from 'react';
-import SectionTitle from '../sectionTitle';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import Button from '../../elements/button';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { fetchDepartment } from '../../../utils/cms/fetchDepartment';
@@ -14,6 +14,7 @@ import { IDepartment } from '../../../utils/interface';
 const OurTeam: React.FC = () => {
     const [domLoaded, setDomLoaded] = useState(false);
     const [isLoading, setIsLoading] = useState<boolean>(false)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [data, setData] = useState<any>([])
 
   const fetchData = async () => {

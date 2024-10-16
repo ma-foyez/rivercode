@@ -1,4 +1,3 @@
-import React from 'react';
 /**
  * Loading content during the initial page render.
  * @returns 

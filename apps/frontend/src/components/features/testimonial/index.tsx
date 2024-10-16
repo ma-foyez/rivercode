@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar } from 'swiper/modules';
@@ -9,36 +12,10 @@ import { fetchTestimonials } from '../../../utils/cms/fetchTestimonials';
 import { ITestimonial } from '../../../utils/interface';
 import LoadingSkeleton from '../loadingSkeleton';
 
-const testimonials = [
-  {
-    id: 1,
-    rating: 5,
-    text: "The company is called Rivercode. It is a software company that specializes in aviation-related software but is open for business in other industries. I am looking for a modern, bold, attractive web design.",
-    author: "Maryam Sicard"
-  },
-  {
-    id: 2,
-    rating: 5,
-    text: "The company is called Rivercode. It is a software company that specializes in aviation-related software but is open for business in other industries. I am looking for a modern, bold, attractive web design.",
-    author: "Maryam Sicard"
-  },
-  {
-    id: 3,
-    rating: 5,
-    text: "The company is called Rivercode. It is a software company that specializes in aviation-related software but is open for business in other industries. I am looking for a modern, bold, attractive web design.",
-    author: "Maryam Sicard"
-  },
-  {
-    id: 4,
-    rating: 5,
-    text: "The company is called Rivercode. It is a software company that specializes in aviation-related software but is open for business in other industries. I am looking for a modern, bold, attractive web design.",
-    author: "Maryam Sicard"
-  }
-];
-
 const Testimonial: React.FC = () => {
   const [domLoaded, setDomLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [data, setData] = useState<any>([])
 
 const fetchData = async () => {

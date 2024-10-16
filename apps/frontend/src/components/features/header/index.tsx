@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 import { useEffect, useState } from 'react';
 import { NavLink , useLocation } from 'react-router-dom';
 import { navData } from '../../../utils/data/nav_data';

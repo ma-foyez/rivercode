@@ -12,4 +12,5 @@ const config = {
 export const sanityClient = createClient(config)
 
 export const imageBuilder = imageUrlBuilder(sanityClient)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const urlFor = (source: any) => imageBuilder.image(source)

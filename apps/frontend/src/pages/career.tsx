@@ -1,4 +1,3 @@
-import React from 'react';
 import PageBanner from '../components/features/pageBanner';
 import ContactUs from '../components/features/contactUs';
 import OurTeam from '../components/features/ourTeam';

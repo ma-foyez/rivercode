@@ -3,7 +3,6 @@ import TrustedCompany from '../components/features/trustedCompany';
 import ContactUs from '../components/features/contactUs';
 import SoftwareDepartment from '../components/features/softwareDepartment';
 import CustomerSupport from '../components/features/customerSupport';
-import JobAd from '../components/features/jobAd';
 
 const ServicePage = () => {
     return (

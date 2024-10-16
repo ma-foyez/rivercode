@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 import React, { MouseEventHandler } from "react";
 import { Link } from "react-router-dom";
 

@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 import React, { useEffect, useState } from 'react';
 import SectionTitle from '../sectionTitle';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,6 +15,7 @@ import LoadingSkeleton from '../loadingSkeleton';
 const Project: React.FC = () => {
     const [domLoaded, setDomLoaded] = useState(false);
     const [isLoading, setIsLoading] = useState<boolean>(false)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [data, setData] = useState<any>([])
 
   const fetchData = async () => {

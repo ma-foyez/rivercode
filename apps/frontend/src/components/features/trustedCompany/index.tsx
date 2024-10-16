@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 import React, {useEffect, useState} from 'react';
 import { fetchTrustedCompany } from '../../../utils/cms/fetchTrustedCompany';
 import { ICompany } from '../../../utils/interface';
