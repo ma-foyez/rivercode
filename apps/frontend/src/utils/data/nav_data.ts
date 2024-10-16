@@ -8,7 +8,7 @@ export const navData = [
     {
       menuID: "menu-002",
       title: "Industries",
-      url: "/industries",
+      url: "/service",
       subMenu: [],
     },
   
@@ -24,13 +24,13 @@ export const navData = [
     {
       menuID: "menu-004",
       title: "About Us",
-      url: "",
+      url: "/about",
       subMenu: [],
     },
     {
       menuID: "menu-005",
       title: "Career",
-      url: "",
+      url: "/career",
       subMenu: [],
     },
   ];

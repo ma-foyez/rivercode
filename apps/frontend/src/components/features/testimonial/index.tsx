@@ -5,6 +5,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import SectionTitle from '../sectionTitle';
+import { fetchTestimonials } from '../../../utils/cms/fetchTestimonials';
+import { ITestimonial } from '../../../utils/interface';
+import LoadingSkeleton from '../loadingSkeleton';
 
 const testimonials = [
   {
@@ -35,20 +38,37 @@ const testimonials = [
 
 const Testimonial: React.FC = () => {
   const [domLoaded, setDomLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [data, setData] = useState<any>([])
+
+const fetchData = async () => {
+  setIsLoading(true);
+  try {
+    const getData = await fetchTestimonials();
+    setData(getData);
+  } catch (error) {
+    console.error('Error fetching trusted company data:', error);
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   useEffect(() => {
-    setDomLoaded(true);
+      setDomLoaded(true);
+      fetchData()
   }, []);
+
 
   return (
     <div className="sl-section-space">
        <div className='sl-container '>
           <div className="relative">
-            <p className='uppercase text-base lg:text-lg text-dark-gray font-semibold absolute left-0 top-2'>project</p>
+            <p className='uppercase text-base lg:text-lg text-dark-gray font-semibold absolute left-0 top-2'>Testimonial</p>
             <SectionTitle title='Here is what our customers say'/>
           </div>
+          {isLoading && <LoadingSkeleton count={4} /> }
         </div>
-      {domLoaded && (
+      {domLoaded && data && data.length > 0 && (
         <Swiper
           modules={[Navigation, Scrollbar]}
           spaceBetween={30}
@@ -68,14 +88,14 @@ const Testimonial: React.FC = () => {
             },
           }}
         >
-          {testimonials.map((testimonial) => (
-            <SwiperSlide key={testimonial.id} className="swiper-slide bg-gray p-8 text-[#1A326A] flex flex-col gap-4 my-5">
+          {data.map((testimonial: ITestimonial, index: number) => (
+            <SwiperSlide key={index} className="swiper-slide bg-gray p-8 text-[#1A326A] flex flex-col gap-4 my-5">
               <div className="text-[#FFBD32]">
                 {[...Array(testimonial.rating)].map((_, index) => (
                   <i key={index} className="fa-solid fa-star"></i>
                 ))}
               </div>
-              <p className="text-blue text-lg md:text-[24px]">{testimonial.text}</p>
+              <p className="text-blue text-lg md:text-[24px]">{testimonial.message}</p>
               <p className="uppercase text-base md:text-xl text-blue font-semibold">{testimonial.author}</p>
             </SwiperSlide>
           ))}

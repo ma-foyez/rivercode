@@ -4,47 +4,31 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-
-interface ProjectData {
-    id: number;
-    image: string;
-    title: string;
-    description: string;
-}
-
-const dummyData: ProjectData[] = [
-    {
-        id: 1,
-        image: "./assets/images/project-1.png",
-        title: "Aviation Operations Platforms",
-        description: "Designed and developed SD Pro, centralizing critical flight information for more data-driven decisions."
-    },
-    {
-        id: 2,
-        image: "./assets/images/project-2.png",
-        title: "Aviation Operations Platforms",
-        description: "Designed and developed SD Pro, centralizing critical flight information for more data-driven decisions."
-    },
-    {
-        id: 3,
-        image: "./assets/images/project-3.png",
-        title: "Aviation Operations Platforms",
-        description: "Designed and developed SD Pro, centralizing critical flight information for more data-driven decisions."
-    },
-    {
-        id: 4,
-        image: "./assets/images/project-3.png",
-        title: "Aviation Operations Platforms",
-        description: "Designed and developed SD Pro, centralizing critical flight information for more data-driven decisions."
-    }
-];
-
+import { IProject } from '../../../utils/interface';
+import { fetchProject } from '../../../utils/cms/fetchProjects';
+import { urlForThumbnail } from '../../../utils/cms/_helper/imageProcess';
+import LoadingSkeleton from '../loadingSkeleton';
 
 const Project: React.FC = () => {
     const [domLoaded, setDomLoaded] = useState(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [data, setData] = useState<any>([])
+
+  const fetchData = async () => {
+    setIsLoading(true);
+    try {
+      const getData = await fetchProject();
+      setData(getData);
+    } catch (error) {
+      console.error('Error fetching trusted company data:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
     useEffect(() => {
         setDomLoaded(true);
+        fetchData()
     }, []);
 
     return (
@@ -55,7 +39,13 @@ const Project: React.FC = () => {
                         <SectionTitle title='Previous Projects'/>
                 </div>
             </div>
-            {domLoaded && (
+            { isLoading && (
+                <div className="sl-container">
+                     <LoadingSkeleton cardType='card' count={4} /> 
+                </div>
+            )
+            }
+            {domLoaded && data && data.length > 0 && (
                         <div className="w-full h-full my-10 overflow-hidden pb-20 relative">
                             <Swiper
                                 modules={[Navigation]}
@@ -75,9 +65,9 @@ const Project: React.FC = () => {
                                     },
                                 }}
                             >
-                                {dummyData.map((project) => (
-                                    <SwiperSlide key={project.id}>
-                                        <img src={project.image} alt={`Project ${project.id}`} className="w-full h-auto object-cover" />
+                                {data.map((project: IProject, index : number) => (
+                                    <SwiperSlide key={index}>
+                                        <img src={urlForThumbnail(project.banner)} alt={`Project ${project.title}`} className="w-full h-auto object-cover" />
                                         <h3 className="font-bold text-[30px] mt-6">{project.title}</h3>
                                         <p className="text-[#5E646B]">{project.description}</p>
                                     </SwiperSlide>

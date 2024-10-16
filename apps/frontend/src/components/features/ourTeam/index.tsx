@@ -5,49 +5,32 @@ import { Navigation } from 'swiper/modules';
 import Button from '../../elements/button';
 import 'swiper/css';
 import 'swiper/css/navigation';
-
-
-
-interface TeamMemberData {
-    id: number;
-    image: string;
-    department: string;
-    description: string;
-}
-
-const teamData: TeamMemberData[] = [
-    {
-        id: 1,
-        image: "./assets/images/team/team (1).png",
-        department: "Software Department",
-        description: "Flight Operations, Enhance Safety, And Improve Efficiency"
-    },
-    {
-        id: 2,
-        image: "./assets/images/team/team (2).png",
-        department: "Software Department",
-        description: "Flight Operations, Enhance Safety, And Improve Efficiency"
-    },
-    {
-        id: 3,
-        image: "./assets/images/team/team (3).png",
-        department: "Software Department",
-        description: "Flight Operations, Enhance Safety, And Improve Efficiency"
-    },
-    {
-        id: 4,
-        image: "./assets/images/team/team (1).png",
-        department: "Software Department",
-        description: "Flight Operations, Enhance Safety, And Improve Efficiency"
-    }
-];
+import { fetchDepartment } from '../../../utils/cms/fetchDepartment';
+import LoadingSkeleton from '../loadingSkeleton';
+import { urlForThumbnail } from '../../../utils/cms/_helper/imageProcess';
+import { IDepartment } from '../../../utils/interface';
 
 
 const OurTeam: React.FC = () => {
     const [domLoaded, setDomLoaded] = useState(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [data, setData] = useState<any>([])
+
+  const fetchData = async () => {
+    setIsLoading(true);
+    try {
+      const getData = await fetchDepartment();
+      setData(getData);
+    } catch (error) {
+      console.error('Error fetching trusted company data:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
     useEffect(() => {
         setDomLoaded(true);
+        fetchData()
     }, []);
 
     return (
@@ -61,7 +44,9 @@ const OurTeam: React.FC = () => {
                     </p>
                 </div>
 
-                {domLoaded && (
+                { isLoading && <LoadingSkeleton cardType='card' count={4} />}
+
+                {domLoaded && data && data.length > 0 && (
                     <div className="relative">
                             <div className="absolute -top-20 right-10 transform -translate-x-1/2 z-10">
                                 <div className="inline-flex items-center">
@@ -89,16 +74,16 @@ const OurTeam: React.FC = () => {
                             }}
                             className="pb-8"
                         >
-                            {teamData.map((member) => (
-                                <SwiperSlide key={member.id} className="relative">
+                            {data.map((member: IDepartment, index: number) => (
+                                <SwiperSlide key={index} className="relative">
                                     <div className="relative aspect-w-3 aspect-h-2 mb-4">
                                         <img 
-                                            src={member.image} 
-                                            alt={member.department}
+                                            src={urlForThumbnail(member.banner)} 
+                                            alt={member.title}
                                             className="object-cover w-full h-full"
                                         />
                                         <div className=" bg-white p-4 absolute w-[90%] bottom-10 left-1/2 transform -translate-x-1/2 z-10">
-                                            <h3 className="text-sm font-semibold text-[#5E646B]">{member.department}</h3>
+                                            <h3 className="text-sm font-semibold text-[#5E646B]">{member.title}</h3>
                                          <div className="flex gap-2 mt-2">
                                          <p className="text-xs text-[#14213D]">{member.description} </p>
                                          <p><i className="fa-solid fa-location-arrow text-[#14213D]"></i></p>

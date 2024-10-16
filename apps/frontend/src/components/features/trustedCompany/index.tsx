@@ -5,10 +5,8 @@ import { urlForThumbnail } from '../../../utils/cms/_helper/imageProcess';
 import LoadingSkeleton from '../loadingSkeleton';
 
 const TrustedCompany: React.FC = () => {
-
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [data, setData] = useState<any>([])
-    const [error, setError] = useState<string | null>(null);
 
   const fetchData = async () => {
     setIsLoading(true);
@@ -17,7 +15,6 @@ const TrustedCompany: React.FC = () => {
       setData(getData);
     } catch (error) {
       console.error('Error fetching trusted company data:', error);
-      setError('Failed to fetch trusted company data');
     } finally {
       setIsLoading(false);
     }
