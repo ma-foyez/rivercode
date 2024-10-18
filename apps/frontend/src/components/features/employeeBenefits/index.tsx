@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SectionTitle from '../sectionTitle';
 
 interface Benefit {
@@ -14,7 +14,7 @@ const benefits: Benefit[] = [
     description: "Designed and developed SD Pro, centralizing critical flight information for more data-driven decisions."
   },
   {
-    icon: './assets/images/icons/oppertunity.svg',
+    icon: './assets/images/icons/oppertunity-growth.svg',
     title: "Opportunities for professional growth and development",
     description: "Designed and developed SD Pro, centralizing critical flight information for more data-driven decisions."
   },
@@ -41,35 +41,46 @@ const benefits: Benefit[] = [
 ];
 
 const EmployeeBenefits: React.FC = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
-    <div className="bg-blue p-8 text-white">
+    <div className="bg-blue text-white sl-section-space">
+      <div className="sl-container">
       <SectionTitle title='What We Offer'/>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-5">
         {benefits.map((benefit, index) => (
-          <div 
-            key={index} 
-            className={`group border sm:border-none border-gray rounded-lg p-4 sl-animate hover:bg-white hover:text-black ${index === 1 ? 'bg-white text-black' : ''}`}
+          <div
+            key={index}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            className={`
+              group border sm:border-none border-gray rounded-lg p-4 sl-animated
+              ${hoveredIndex === index ? 'bg-white text-black' : index === 1 && hoveredIndex === null ? 'bg-white text-black' : 'bg-transparent'}
+            `}
           >
             <div className="relative h-10 w-10 my-2">
-              <img 
-                src={benefit.icon} 
-                alt={benefit.title} 
-                className="h-full w-full object-contain transition-opacity duration-300 group-hover:opacity-0"
-              />
-              <img 
-                src={benefit.icon} 
-                alt={benefit.title} 
-                className="absolute inset-0 h-full w-full object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100 filter invert"
+              <img
+                src={benefit.icon}
+                alt={benefit.title}
+                className={`h-full w-full object-contain transition-opacity duration-300 
+                  ${hoveredIndex === index || (hoveredIndex === null && index === 1) ? 'opacity-100 filter invert' : 'opacity-100'}
+                `}
               />
             </div>
 
             <div className="flex items-center my-2 sm:my-3">
-              <h3 className="text-base sm:text-lg lg:text-xl font-semibold">{benefit.title}</h3>
+              <h3 className={`text-base sm:text-lg lg:text-xl font-semibold ${hoveredIndex === index || (hoveredIndex === null && index === 1) ? 'text-black' : 'text-white'}`}>
+                {benefit.title}
+              </h3>
             </div>
-            <p className="text-sm">{benefit.description}</p>
+            <p className={`text-sm ${hoveredIndex === index || (hoveredIndex === null && index === 1) ? 'text-black' : 'text-white'}`}>
+              {benefit.description}
+            </p>
           </div>
         ))}
       </div>
+      </div>
+     
     </div>
   );
 };
