@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { NavLink , useLocation } from 'react-router-dom';
 import { navData } from '../../../utils/data/nav_data';
-import logo from '../../../assets/images/logo.svg';
 
 const Header = () => {
     const location = useLocation();  
@@ -41,27 +40,28 @@ const Header = () => {
                 <div className="header-area">
                     <div className="header-logo">
                         <NavLink to="/">
-                            <img src={logo} alt='myInsight.ai' className='w-24 lg:w-auto' />
+                            <img src={'./assets/images/logo.svg'} alt='myInsight.ai' className='w-32 lg:w-auto' />
                         </NavLink>
                     </div>
                     <div className='block lg:hidden'>
                         <button onClick={() => setCollapseNavbar(!collapseNavbar)}>
-                            {collapseNavbar ? (
-                                <svg className='fill-black' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M6 18L18 6M6 6L18 18" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            ) : (
-                                <svg className='fill-black' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z" fill="white" />
-                                </svg>
-                            )}
+                           
+                                                            {
+                                    collapseNavbar ?
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M6 18L18 6M6 6L18 18" stroke="#424242" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg> :
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z" fill="#424242" />
+                                        </svg>
+                                }
                         </button>
                     </div>
                     <nav className={`main-menu ${collapseNavbar ? 'show-menu' : ''}`}>
                         <div className="mobile-logo-area lg:hidden block bg-green">
                             <div className="px-5 py-3 flex justify-between items-center">
                                 <NavLink to="/">
-                                    <img src={logo} alt='myInsight.ai' className='w-32' />
+                                    <img src={'./assets/images/logo-white.png'} alt='myInsight.ai' className='w-32' />
                                 </NavLink>
                                 <button className="menu-close-btn" onClick={() => setCollapseNavbar(!collapseNavbar)}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
