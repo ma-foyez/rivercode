@@ -48,23 +48,23 @@ const SoftwareDepartment: React.FC = () => {
 
     return (
         <section className="sl-section-space">
-            <div className="sl-container mx-auto px-4">
-                <div className="text-center mb-12">
+            <div className="sl-container">
+                <div className="text-center mb-8 sm:mb-12">
                     <SectionTitle title="Software Development" />
                     <p className="text-sm lg:text-base text-[#5E646B] mt-4">
                         We create custom, scalable software solutions designed to optimize aviation and other industry operations.
                     </p>
                 </div>
 
-                <div className="mb-8">
-                    <h2 className="text-xl md:text-2xl text-blue font-bold mb-2">Data Management</h2>
+                <div className="mb-20 sm:mb-8">
+                    <h2 className="text-xl md:text-2xl text-blue font-bold mb-2 text-center sm:text-left">Data Management</h2>
                     <p className="text-sm lg:text-base text-[#5E646B]">
                         Our data management services ensure your operations run smoothly with:
                     </p>
                 </div>
 
                 {domLoaded && (
-                    <div className="w-full h-full my-10 pb-20 relative">
+                    <div className="w-full h-full pb-1 sm:pb-20 relative">
                         <Swiper
                             modules={[Navigation]}
                             spaceBetween={30}
@@ -78,7 +78,7 @@ const SoftwareDepartment: React.FC = () => {
                                 640: { slidesPerView: 2 },
                                 1024: { slidesPerView: 3 },
                             }}
-                            className="pb-16"
+                            className=""
                         >
                             {dummyData.map((project) => (
                                 <SwiperSlide key={project.id} className="">
@@ -86,7 +86,7 @@ const SoftwareDepartment: React.FC = () => {
                                         <img 
                                             src={project.image} 
                                             alt={project.title}
-                                            className="object-cover w-full h-full lg:max-h-80"
+                                            className="object-cover w-full h-full max-h-80"
                                         />
                                     </div>
                                     <p className="text-[#5E646B] mb-4 flex-grow">{project.description}</p>

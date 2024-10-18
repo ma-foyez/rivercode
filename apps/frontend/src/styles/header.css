@@ -239,8 +239,6 @@ header.sticky .main-menu .menu-list .menu-item .menu-link {
 	left: 0;
 	width: 100%;
 	padding: 30px 0px;
-	/* max-width: 250px;
-	min-width: 200px; */
 	background-color: #1A326A;
 	text-align: left;
 	-webkit-transform: scaleY(0);
@@ -297,6 +295,7 @@ header.sticky .main-menu .menu-list .menu-item .menu-link {
 	opacity: 1;
 	-webkit-transform: scaleY(1);
 	transform: scaleY(1);
+	display: none;
 }
 .main-menu .menu-list .menu-item:hover header {
 	background: #0F6A39 !important;

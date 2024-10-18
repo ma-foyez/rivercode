@@ -38,10 +38,10 @@ const Project: React.FC = () => {
     return (
         <div className="sl-section-space">
             <div className='sl-container '>
-                <div className="relative">
-                        <p className='uppercase text-base lg:text-lg text-dark-gray font-semibold absolute left-0 top-2'>project</p>
-                        <SectionTitle title='Previous Projects'/>
-                </div>
+              <div className="relative">
+                    <p className="uppercase text-sm md:text-base xl:text-lg text-dark-gray font-semibold absolute -top-3 sm:-top-3 left-1/2 sm:left-3 transform -translate-x-1/2 md:-translate-x-0 "> project </p>
+                    <SectionTitle title='Previous Projects'/>
+               </div>
             </div>
             { isLoading && (
                 <div className="sl-container">
@@ -50,7 +50,7 @@ const Project: React.FC = () => {
             )
             }
             {domLoaded && data && data.length > 0 && (
-                        <div className="w-full h-full my-10 overflow-hidden pb-20 relative">
+                        <div className="w-full h-full my-4 sm:my-8 overflow-hidden pb-20 relative px-2 sm:px-0">
                             <Swiper
                                 modules={[Navigation]}
                                 spaceBetween={30}
@@ -72,8 +72,10 @@ const Project: React.FC = () => {
                                 {data.map((project: IProject, index : number) => (
                                     <SwiperSlide key={index}>
                                         <img src={urlForThumbnail(project.banner)} alt={`Project ${project.title}`} className="w-full h-auto object-cover" />
-                                        <h3 className="font-bold text-[30px] mt-6">{project.title}</h3>
-                                        <p className="text-[#5E646B]">{project.description}</p>
+                                       <div className="px-2">
+                                        <h3 className="font-bold text-lg sm:text-[30px] mt-6 mb-2">{project.title}</h3>
+                                        <p className="text-sm sm:text-base lg:text-lg text-[#5E646B]">{project.description}</p>
+                                       </div>
                                     </SwiperSlide>
                                 ))}
                             </Swiper>

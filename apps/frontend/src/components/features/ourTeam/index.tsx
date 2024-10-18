@@ -36,9 +36,9 @@ const OurTeam: React.FC = () => {
 
     return (
         <section className="sl-section-space">
-            <div className="sl-container mx-auto px-4">
+            <div className="sl-container">
 
-                <div className="mb-12 lg:w-4/5">
+                <div className="mb-20 sm:mb-12 w-full lg:w-4/5">
                     <h2 className="text-2xl md:text-3xl xl:text-4xl text-[#14213D] font-bold mb-4">Join Our Team Of Aviation Innovators</h2>
                     <p className="text-sm lg:text-base text-[#5E646B]">
                         Are you passionate about software development and aviation? At RiverCode, we combine these two worlds to build cutting-edge solutions that transform flight operations, enhance safety, and improve efficiency. Our team is made up of developers, pilots, and technology enthusiasts who share a common goal: to innovate and lead the future of aviation technology.
@@ -73,7 +73,7 @@ const OurTeam: React.FC = () => {
                                 640: { slidesPerView: 2 },
                                 1024: { slidesPerView: 3 },
                             }}
-                            className="pb-8"
+                            className=""
                         >
                             {data.map((member: IDepartment, index: number) => (
                                 <SwiperSlide key={index} className="relative">

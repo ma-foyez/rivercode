@@ -48,7 +48,7 @@ const EmployeeBenefits: React.FC = () => {
         {benefits.map((benefit, index) => (
           <div 
             key={index} 
-            className={`group rounded-lg p-4 sl-animate hover:bg-white hover:text-black ${index === 1 ? 'bg-white text-black' : ''}`}
+            className={`group border sm:border-none border-gray rounded-lg p-4 sl-animate hover:bg-white hover:text-black ${index === 1 ? 'bg-white text-black' : ''}`}
           >
             <div className="relative h-10 w-10 my-2">
               <img 
@@ -63,8 +63,8 @@ const EmployeeBenefits: React.FC = () => {
               />
             </div>
 
-            <div className="flex items-center mb-4">
-              <h3 className="text-xl font-semibold">{benefit.title}</h3>
+            <div className="flex items-center my-2 sm:my-3">
+              <h3 className="text-base sm:text-lg lg:text-xl font-semibold">{benefit.title}</h3>
             </div>
             <p className="text-sm">{benefit.description}</p>
           </div>

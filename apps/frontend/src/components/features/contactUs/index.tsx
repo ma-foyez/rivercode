@@ -51,18 +51,18 @@ const ContactUs: React.FC = () => {
 
       <div className="sl-container flex flex-col md:flex-row justify-between items-center gap-8 my-10 md:my-20  relative z-10">
         <div className="w-full md:w-[600px]">
-          <h2 className="text-4xl md:text-[48px] font-bold mb-2 leading-tight text-white"> How to contact with us? </h2>
+          <h2 className="text-2xl sm:text-4xl md:text-[48px] font-bold mb-2 leading-tight text-white"> How to contact with us? </h2>
           <p className="text-white text-sm md:text-base"> 
               Minimizing downtime and potential lost revenue means Centarus’ support solutions are engineered toward being a productive and profitable choice. If you want efficient, effective IT solutions.
             </p>
           <div className="flex flex-col gap-4 mt-12">
 
           <div className="flex gap-4 items-start">
-              <p className="bg-[#E5EEF54D] border border-[#E5EEF54D] h-11 w-11 rounded-full flex justify-center items-center">
-                <i className="fa-solid fa-location-dot text-white text-xl"></i>
+              <p className="bg-[#E5EEF54D] border border-[#E5EEF54D] h-8 sm:h-11 w-8 sm:w-11 rounded-full flex justify-center items-center">
+                <i className="fa-solid fa-location-dot text-white text-base sm:text-xl"></i>
               </p>
               <div>
-                <p className="text-base md:text-xl font-bold text-white">Map Location</p>
+                <p className="text-sm sm:text-base md:text-xl font-bold text-white">Map Location</p>
                 <p className="text-sm md:text-base text-white mt-2">
                   123 Aviation Way, Suite 100 <br />
                   Find us on google map
@@ -71,11 +71,11 @@ const ContactUs: React.FC = () => {
             </div>
 
             <div className="flex gap-4 items-start">
-              <p className="bg-[#E5EEF54D] border border-[#E5EEF54D] h-11 w-11 rounded-full flex justify-center items-center">
-                <i className="fa-solid fa-phone text-white text-lg"></i>
+              <p className="bg-[#E5EEF54D] border border-[#E5EEF54D] h-8 sm:h-11 w-8 sm:w-11 rounded-full flex justify-center items-center">
+                <i className="fa-solid fa-phone text-white text-base sm:text-xl"></i>
               </p>
               <div>
-                <p className="text-base md:text-xl font-bold text-white">Contact Number</p>
+                <p className="text-sm sm:text-base md:text-xl font-bold text-white">Contact Number</p>
                 <p className="text-sm md:text-base text-white mt-2">
                   +1 (555) 123-4567 <br />
                   +1 (555) 123-4567
@@ -84,11 +84,11 @@ const ContactUs: React.FC = () => {
             </div>
 
             <div className="flex gap-4 items-start">
-              <p className="bg-[#E5EEF54D] border border-[#E5EEF54D] h-11 w-11 rounded-full flex justify-center items-center">
-                 <i className="fa-regular fa-envelope text-white text-lg"></i>
+              <p className="bg-[#E5EEF54D] border border-[#E5EEF54D] h-8 sm:h-11 w-8 sm:w-11 rounded-full flex justify-center items-center">
+                 <i className="fa-regular fa-envelope text-white text-base sm:text-xl"></i>
               </p>
               <div>
-                <p className="text-base md:text-xl font-bold text-white">Mail Address</p>
+                <p className="text-sm sm:text-base md:text-xl font-bold text-white">Mail Address</p>
                 <p className="text-sm md:text-base text-white mt-2">
                   info@rivercode.net <br />
                   info@rivercode.net

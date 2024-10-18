@@ -36,7 +36,7 @@ const Header = () => {
     const isHomePage = location.pathname === '/';
 
     return (
-        <header className={`relative lg:absolute header-section ${isToggle ? 'sticky' : ''} ${isHoverMenu || !isHomePage ? 'bg-white' : 'lg:bg-transparent'}`}>
+        <header className={`relative lg:absolute header-section ${isToggle ? 'sticky' : ''} ${!isHomePage ? 'bg-white' : 'lg:bg-transparent'}`}>
             <div className="sl-container">
                 <div className="header-area">
                     <div className="header-logo">
@@ -47,11 +47,11 @@ const Header = () => {
                     <div className='block lg:hidden'>
                         <button onClick={() => setCollapseNavbar(!collapseNavbar)}>
                             {collapseNavbar ? (
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <svg className='fill-black' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M6 18L18 6M6 6L18 18" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             ) : (
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <svg className='fill-black' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z" fill="white" />
                                 </svg>
                             )}
@@ -76,7 +76,7 @@ const Header = () => {
                                     {nav.subMenu && nav.subMenu.length > 0 ? (
                                         <NavLink
                                             className={({ isActive }) => `menu-link drop-down has_sub_menu ${isActive ? 'active' : ''} ${(toggleSubmenu && menuID === idx) ? 'active' : ''}`}
-                                            to={nav.url}
+                                            to={'/page-not-found'}
                                         >
                                             <span>{nav.title}</span>
                                             <span>

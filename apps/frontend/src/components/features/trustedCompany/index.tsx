@@ -34,7 +34,7 @@ const TrustedCompany: React.FC = () => {
            {isLoading && <LoadingSkeleton count={4} /> }
            {
             !isLoading && (
-              <div className="grid grid-cols-2 xm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 items-center py-5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 items-center py-2 sm:py-5">
               {
                data && data.length > 0 && data.map((company:ICompany, index: number) => (
                   <div key={index} className='p-4 text-center'>

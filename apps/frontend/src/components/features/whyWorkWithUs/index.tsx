@@ -25,12 +25,12 @@ const WhyWorkWithUs: React.FC = () => {
   return (
     <div className="sl-section-space">
       <div className="sl-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-8">
             <div className='order-2 lg:order-1'>
-              <h2 className="text-2xl md:text-4xl font-bold mb-2 leading-tight text-[#232834] mt-5 lg:mt-0"> Why Work with Us? </h2>
+              <h2 className="text-2xl md:text-4xl font-bold mb-2 leading-tight text-[#232834] mt-5 lg:mt-0 mb-4"> Why Work with Us? </h2>
             {
                 benefits.map((benefit, index) => (
-                <div key={index} className='flex gap-4 items-start mt-5 mb-3'>
+                <div key={index} className='flex gap-4 items-start mt-2 sm:mt-5'>
                     <p><i className="text-xl fa-solid fa-circle-check text-sky mt-1"></i></p>
                     <div>
                         <h3 className="text-lg md:text-xl font-semibold text-[#232834]">{benefit.title}</h3>
@@ -43,8 +43,8 @@ const WhyWorkWithUs: React.FC = () => {
 
             </div>
 
-            <div className='relative h-screen xl:h-auto order-1 lg:order-2'>
-                <img src="./assets/images/Mask group.png" alt="Rivercode" className='w-full h-screen xl:h-[550px]' />
+            <div className='relative  sm:h-screen xl:h-auto order-1 lg:order-2'>
+                <img src="./assets/images/Mask group.png" alt="Rivercode" className='w-full object-fit h-[320px] sm:h-screen xl:h-[550px]' />
                  <img src="./assets/images/icons/Elements_Blue-Angle-Bottom-Left 2.png" alt="Rivercode" className='absolute bottom-0 right-0 transform scale-x-[-1]' />
             </div>
         </div>

@@ -40,7 +40,7 @@ const fetchData = async () => {
     <div className="sl-section-space">
        <div className='sl-container '>
           <div className="relative">
-            <p className='uppercase text-base lg:text-lg text-dark-gray font-semibold absolute left-0 top-2'>Testimonial</p>
+            <p className='uppercase text-sm md:text-base xl:text-lg text-dark-gray font-semibold absolute -top-3 sm:top-2 left-1/2 transform -translate-x-1/2  md:left-0 md:-translate-x-0 '>Testimonial</p>
             <SectionTitle title='Here is what our customers say'/>
           </div>
           {isLoading && <LoadingSkeleton count={4} /> }
@@ -72,7 +72,7 @@ const fetchData = async () => {
                   <i key={index} className="fa-solid fa-star"></i>
                 ))}
               </div>
-              <p className="text-blue text-lg md:text-[24px]">{testimonial.message}</p>
+              <p className="text-sm sm:text-base lg:text-lg text-[#5E646B]">{testimonial.message}</p>
               <p className="uppercase text-base md:text-xl text-blue font-semibold">{testimonial.author}</p>
             </SwiperSlide>
           ))}
