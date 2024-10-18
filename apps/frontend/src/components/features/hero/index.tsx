@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
         backgroundImage: `url(${banner})`,
        }}
     >
-    <div className="sl-container min-h-screen grid grid-cols-1 sm:grid-cols-2 xm:items-center mt-10">
+    <div className="sl-container min-h-screen grid grid-cols-1 sm:grid-cols-2 xm:items-center mt-10 sm:items-center">
       <div className="w-full flex flex-col gap-4 sm:gap-10">
           <h1 className="text-2xl sm:text-3xl md:text-6xl 2xl:text-[92px] font-bold leading-tight">
             Innovative <br /> Aviation Software <br /> for Private Jets

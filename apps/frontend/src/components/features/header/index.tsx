@@ -76,7 +76,7 @@ const Header = () => {
                                     {nav.subMenu && nav.subMenu.length > 0 ? (
                                         <NavLink
                                             className={({ isActive }) => `menu-link drop-down has_sub_menu ${isActive ? 'active' : ''} ${(toggleSubmenu && menuID === idx) ? 'active' : ''}`}
-                                            to={'/page-not-found'}
+                                            to={'/home'}
                                         >
                                             <span>{nav.title}</span>
                                             <span>

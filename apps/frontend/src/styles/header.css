@@ -218,7 +218,7 @@ header.sticky .main-menu .menu-list .menu-item .menu-link {
 }
 
 
-.main-menu .menu-list .menu-item .menu-link:hover::before, .main-menu .menu-list .menu-item .menu-link.drop-down.active::before {
+.main-menu .menu-list .menu-item .menu-link:hover::before, .main-menu .menu-list .menu-item .menu-link.drop-down.active::before, .main-menu .menu-list .menu-item .menu-link.active::before {
 	-webkit-transform: scale(1);
 	transform: scale(1);
 }
