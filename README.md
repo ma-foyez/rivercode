@@ -62,3 +62,6 @@ cd rivercode/apps/cms
 ```bash
 npm run dev
 ```
+
+## Deploy
+[] - deploye
