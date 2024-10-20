@@ -5,12 +5,15 @@ import Button from '../../elements/button';
 const Hero: React.FC = () => {
   return (
     <section 
-      className="h-[420px] sm:h-screen w-full bg-cover bg-left-bottom lg:bg-center	 bg-no-repeat flex items-center"
+      className="h-[420px] sm:h-screen w-full bg-cover bg-center bg-no-repeat relative"
       style={{ 
-        backgroundImage: `url(${banner})`,
+        backgroundImage: `url(./assets/images/hero_bg.svg)`,
       }}
     >
-      <div className="sl-container w-full">
+      <div>
+        
+      </div>
+      <div className="sl-container flex items-end h-screen pb-14">
         <div className="max-w-2xl">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">
             Innovative <br /> Aviation Software <br /> for Private Jets
