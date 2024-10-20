@@ -49,8 +49,10 @@ const ContactUs: React.FC = () => {
          <div className="absolute inset-0 bg-blue opacity-90"></div>
       </div>
 
-      <div className="sl-container flex flex-col lg:flex-row justify-between items-center gap-4 sm:gap-8 my-10 md:my-20  relative z-10">
-        <div className="w-full lg:w-[600px]">
+      <div className="sl-container relative z-10 py-10">
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-16">
+        <div className="w-ful">
           <h2 className="text-2xl sm:text-4xl md:text-[48px] font-bold mb-2 leading-tight text-white"> How to contact with us? </h2>
           <p className="text-white text-sm md:text-base"> 
               Minimizing downtime and potential lost revenue means Centarus’ support solutions are engineered toward being a productive and profitable choice. If you want efficient, effective IT solutions.
@@ -101,10 +103,10 @@ const ContactUs: React.FC = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col items-start gap-3 w-full lg:w-[480px]"
+          className="w-full"
         >
           <h4 className="text-[24px] font-bold mb-6 text-white">Get in Touch</h4>
-          <div className="flex gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 sm:gap-2">
               <Input
                 type="text"
                 name="fullName"
@@ -154,6 +156,9 @@ const ContactUs: React.FC = () => {
             disabled={!isFormValid || isLoading}
           />
         </form>
+        </div>
+       
+     
       </div>
     </section>
   );

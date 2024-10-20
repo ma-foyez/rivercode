@@ -44,8 +44,10 @@ const HomeContact: React.FC = () => {
 
   return (
     <section id="contact" className="sl-section-space">
-      <div className="sl-container flex flex-col md:flex-row justify-between items-center gap-8 my-10 md:my-20">
-        <div className="w-full md:w-[600px]">
+      <div className="sl-container my-10 md:my-20">
+       
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-20">
+       <div className="w-full">
           <h2 className="text-4xl md:text-[48px] font-bold mb-2 leading-tight">
             Let's Navigate the Future Together
           </h2>
@@ -92,7 +94,7 @@ const HomeContact: React.FC = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col items-start border border-[#D0E0E7] rounded-lg p-8 gap-3 w-full md:w-[450px]"
+          className="flex flex-col items-start border border-[#D0E0E7] rounded-lg py-5 px-3 md:py-8 md:px-8 gap-3 w-full"
         >
           <h4 className="text-[24px] font-bold mb-6">Get in Touch</h4>
           <Input
@@ -145,6 +147,8 @@ const HomeContact: React.FC = () => {
             icon={<i className="fa-solid fa-chevron-right text-xs"></i>}
           />
         </form>
+       </div>
+       
       </div>
     </section>
   );

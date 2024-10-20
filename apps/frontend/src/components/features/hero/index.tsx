@@ -5,27 +5,27 @@ import Button from '../../elements/button';
 const Hero: React.FC = () => {
   return (
     <section 
-      className="h-[420px] sm:h-screen w-full bg-cover sm:bg-none lg:bg-cover sm:bg-right-bottom bg-no-repeat py-7"
+      className="h-[420px] sm:h-screen w-full bg-cover bg-left-bottom lg:bg-center	 bg-no-repeat flex items-center"
       style={{ 
         backgroundImage: `url(${banner})`,
-       }}
+      }}
     >
-    <div className="sl-container min-h-screen grid grid-cols-1 sm:grid-cols-2 xm:items-center mt-10 sm:items-center">
-      <div className="w-full flex flex-col gap-4 sm:gap-10">
-          <h1 className="text-2xl sm:text-3xl md:text-6xl 2xl:text-[92px] font-bold leading-tight">
+      <div className="sl-container w-full">
+        <div className="max-w-2xl">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">
             Innovative <br /> Aviation Software <br /> for Private Jets
           </h1>
-          <p className="text-sm sm:text-base md:text-lg">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8">
             At RiverCode, we create innovative software tailored to the unique needs of private jet operators and beyond. 
             Our solutions drive efficiency, streamline operations, and empower businesses to soar to new heights.
           </p>
-          <div className="flex gap-4 flex-col md:flex-row">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Button
               title={'Explore Our Solutions'} 
               type="button"
               iconPosition="right"
               icon={<i className="fa-solid fa-chevron-right ml-2"></i>}
-              customClass='py-3 px-6'
+              customClass='py-3 px-6 w-full sm:w-auto'
             />
             <Button
               title={'Contact Us'} 
@@ -33,19 +33,8 @@ const Hero: React.FC = () => {
               iconPosition="right"
               variant='light'
               icon={<i className="fa-solid fa-chevron-right ml-2"></i>}
-              customClass='py-3 px-6'
+              customClass='py-3 px-6 w-full sm:w-auto'
             />
-            {/* <button className="text-white bg-[#4EC0F9] py-3 px-6 rounded-lg hover:bg-[#3BA0D9] transition-colors duration-300">
-              Explore Our Solutions 
-              <i className="fa-solid fa-chevron-right ml-2"></i>
-            </button>
-            <a 
-              href="#contact" 
-              className="bg-white py-3 px-6 rounded-lg text-center hover:bg-gray-100 transition-colors duration-300"
-            >
-              Contact Us 
-              <i className="fa-solid fa-chevron-right ml-2"></i>
-            </a> */}
           </div>
         </div>
       </div>

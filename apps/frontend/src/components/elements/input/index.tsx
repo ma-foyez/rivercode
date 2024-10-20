@@ -40,7 +40,7 @@ const Input: React.FC<IInput> = ({
           rows={5}
           value={value}
           placeholder={placeholder}
-          className={`${customClass} bg-[#F0F5F7] border border-[#E0EDF2] p-2 w-full rounded-md input-transition outline-0 text-black focus:ring-0 focus:border-blue`}
+          className={`${customClass} bg-[#F0F5F7] border border-[#E0EDF2] p-2 w-full rounded-md input-transition outline-0 text-black focus:ring-0 focus:border-blue my-1`}
           onChange={onChange}
           required={isRequired}
         />
@@ -51,7 +51,7 @@ const Input: React.FC<IInput> = ({
           name={name}
           value={value}
           placeholder={placeholder}
-          className={`${customClass} bg-[#F0F5F7] border border-[#E0EDF2] p-2 w-full rounded-md input-transition outline-0 text-black focus:ring-0 focus:border-blue`}
+          className={`${customClass} bg-[#F0F5F7] border border-[#E0EDF2] p-2 w-full rounded-md input-transition outline-0 text-black focus:ring-0 focus:border-blue my-1`}
           onChange={onChange}
           required={isRequired}
         />

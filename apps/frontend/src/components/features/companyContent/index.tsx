@@ -28,8 +28,7 @@ const CompanyContent:React.FC = () => {
                 </div>
 
                   {/* First Card Item  */}
-                  <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8 items-center py-12">
-                 
+                  <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8 items-center py-12 overflow-hidden">
                     <div className='px-8 lg:pl-20 order-2 lg:order-1'>
                         <div className="relative">
                             <p className='text-base lg:text-lg text-dark-gray font-semibold'>Why Choose Us?</p>
@@ -47,8 +46,6 @@ const CompanyContent:React.FC = () => {
                         <img src="./assets/images/Tailored Solutions.png" alt="Avitation expertise" className='w-full h-auto lg:translate-x-1' />
                     </div>
                 </div>
-
-
         </div>
     );
 };
