@@ -1,5 +1,4 @@
 import React from 'react';
-import banner from '../../../assets/images/banner.png';
 import Button from '../../elements/button';
 
 const Hero: React.FC = () => {
