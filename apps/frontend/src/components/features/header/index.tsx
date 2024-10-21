@@ -12,6 +12,7 @@ const Header = () => {
     const [toggleSubmenu, setToggleSubmenu] = useState(false);
     const [isHoverMenu, setIsHoverMenu] = useState(false);
     const [menuID, setMenuID] = useState(0);
+    const isHomePage = location.pathname === '/';
 
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth);
@@ -32,7 +33,10 @@ const Header = () => {
             setMenuID(id);
         }
     };
-    const isHomePage = location.pathname === '/';
+
+    useEffect(()=>{
+        setCollapseNavbar(false);
+    }, [location])
 
     return (
         <header className={`relative lg:absolute header-section ${isToggle ? 'sticky' : ''} ${!isHomePage ? 'bg-white' : 'lg:bg-transparent'}`}>
