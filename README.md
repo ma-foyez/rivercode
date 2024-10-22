@@ -64,4 +64,4 @@ npm run dev
 ```
 
 ## Deploy
-[] - deploye
+[] - deploye 
