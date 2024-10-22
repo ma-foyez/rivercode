@@ -44,7 +44,7 @@ const WhyWorkWithUs: React.FC = () => {
             </div>
 
             <div className='relative  sm:h-screen xl:h-auto order-1 lg:order-2'>
-                <img src="./assets/images/Mask group.png" alt="Rivercode" className='w-full object-fit h-[320px] sm:h-screen xl:h-[550px]' />
+                <img src="./assets/images/people.svg" alt="Rivercode" className='w-full object-fit h-[320px] sm:h-screen xl:h-[550px]' />
                  <img src="./assets/images/icons/Elements_Blue-Angle-Bottom-Left 2.png" alt="Rivercode" className='absolute bottom-0 right-0 transform scale-x-[-1]' />
             </div>
         </div>
